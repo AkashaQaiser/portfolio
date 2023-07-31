@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .mySlides {
+    object-fit: cover;
+    width: 100vw !important;
+    height: 600px;
+  }
+
+  .slider-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .w3-content {
+    position: absolute;
+    max-width: 100% !important;
+  }
+
+  .nav-slider {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: -19px;
+  }
+
+  .w3-badge {
+    height: 9px;
+    width: 8px;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  .w3-badge:hover {
+    background-color: white;
+    width: 13px;
+    height: 13px;
+  }
+
+  .arrow {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .text {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+    text-align: center;
+    max-width: 80%;
+  }
+
+  .text>h2 {
+    font-family: 'Futura,sans-serif';
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0em;
+    --pxu-lia-inner-sequence: 0;
+    animation-play-state: running;
+  }
+
+  button {
+    color: #fff;
+    background-color: #dc211e;
+    border: 1px solid #dc211e;
+    padding: 10px;
+  }
+
+
+  @media only screen and (max-width:1024px) and (min-width:768px) {
+    .mySlides {
+      height: 400px;
+    }
+
+
+  }
+
+  @media only screen and (max-width:767px) and (min-width:280px) {
+    .mySlides {
+      height: 200px;
+    }
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .text {
+      margin: 0 auto !important;
+      position: static;
+      transform: none;
+    }
+
+    .text>h2 {
+      color: #4d4d4d;
+    }
+
+    .text>p {
+      color: #4d4d4d;
+    }
+
+    .arrow {
+      position: static;
+      transform: none;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      margin-top: -100px;
+      cursor: pointer;
+    }
+
+    .nav-slider {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 87px;
+    }
+
+    .w3-badge {
+      background-color: #ada7a7;
+    }
+
+    .w3-badge:hover {
+      background-color: #4d4d4d;
+      width: 13px;
+      height: 13px;
+    }
+
+
+  }
+  @media only screen and (max-width:280px){
+    .mySlides {
+      height: 140px !important;
+    }
+  }
+</style>
+
+<body>
+  <section class="slider">
+
+    <div class="slider-wrapper">
+
+      <img class="mySlides" src="assets/images/new-image.png">
+      <img class="mySlides" src="assets/images/new-image-2.png">
+
+      <div class="arrow">
+        <div class="left-arrow" onclick="plusDivs(-1)"><svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#ffff"></path> </g></svg></div>
+        <div class="right-arrow" onclick="plusDivs(1)"><svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#ffff"></path> </g></svg></div>
+      </div>
+
+      <div class="nav-slider">
+
+        <span class="w3-badge" onclick="currentDiv(1)"></span>
+        <span class="w3-badge" onclick="currentDiv(2)"></span>
+
+
+      </div>
+      <div class="text">
+        <h2>Replica Jersey Program</h2>
+        <p>Inquire about custom replica jerseys for your organization.</p>
+        <button>Learn More</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("w3-badge");
+      var text = document.getElementsByClassName("text")[0]; // Get the .text element
+
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+
+      x[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " w3-white";
+
+      // Toggle the display of the .text element based on the slide index
+      if (slideIndex === 2) {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+
+
+    setInterval(function () {
+      slideIndex++;
+      if (slideIndex > document.getElementsByClassName("mySlides").length) {
+        slideIndex = 1;
+      }
+      showDivs(slideIndex);
+    }, 3000);
+  </script>
+
+
+</body>
+
+</html>

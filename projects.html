@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/min.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/bf91090ba0.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <section class="navbar">
+    <div class="container">
+        <div class="navigation">
+            <div class="name">
+                <h3>Akasha Qaiser</h3>
+            </div>
+            <div class="nav" id="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                 
+                </ul>
+                <i onclick="toggleMenu('none')" id="close-ico" class="fa fa-times-circle close-ico"></i> 
+            </div>
+            <div class="menu-icons">
+            <i onclick="toggleMenu('block')" class="fa fa-bars menu-ico"></i>
+          
+        </div>
+        </div>
+        
+    </div>
+</section>
+    <section class="project">
+        <div class="container">
+            <div class="project_wrapper">
+                <div class="project_text">
+                    <span id="project-title"></span>
+                </div>
+                <div class="projects">
+                        
+                          <div class="project-card hfg-card" onclick="makeProminent(this)">
+                            <img src="assets/images/hfg.jpg" alt="">
+                            <p  class="project-name">Hungry For Jobs Made in Laravel </p>
+                            <a href="https://hungryforjobs.com/"><button class="Check Out-button">Check Out</button> </a>
+                          </div>
+                    
+                          <div class="project-card ek-card" onclick="makeProminent(this)">
+                           
+                            <img src="assets/images/ek.jpg" alt="">
+                            <p class="project-name ">Every thing Kuwait Made in Codiegniter</p>
+                            <a href="https://www.everythingkuwait.com/">
+                            <button class="Check Out-button">Check Out</button></a>
+                          </div>
+                    
+                          <div class="project-card returant-card" onclick="makeProminent(this)">
+                    
+                            
+                            <img src="assets/images/e food.png" alt="">
+                            <p class="project-name">E-Food Made in Laravel</p>
+                            <a href="www.e-food.gr">
+                            <button class="Check Out-button">Check Out</button></a>
+                          </div>
+                    
+                          <div class="project-card online-course-card" onclick="makeProminent(this)">
+                            
+                            
+                            <img src="assets/images/olc.png" alt="">
+                            <p class="project-name">This page Made in HTML,CSS and JS</p>
+                            <a href="https://akashaqaiser.github.io/online-cource-learning/">
+                            <button class="Check Out-button">Check Out</button></a>
+                          </div>
+                     
+                        
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#project-title', {
+      strings: ['Here are my Some recent <span class="yellow-text">Projects</span> that <span class="yellow-text">I have work </span>before.'],
+      typeSpeed: 50,
+    });
+
+    function makeProminent(card) {
+   const cards = document.getElementsByClassName('project-card');
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove('prominent');
+  }
+  card.classList.add('prominent');
+}
+var navigation = document.getElementById('navigation');
+
+function toggleMenu(displayValue) {
+    if (displayValue === 'block') {
+        navigation.style.display = 'block';
+        // Force a reflow before adding the class to trigger the opening animation
+        navigation.offsetWidth;
+        navigation.classList.add('show-nav');
+        // Add an event listener to close the sidebar when clicking outside
+        document.addEventListener('click', closeMenuOnClickOutside);
+    } else {
+        navigation.classList.remove('show-nav');
+        // Add a transitionend event listener to remove the display after the closing animation ends
+        navigation.addEventListener('transitionend', function() {
+            navigation.style.display = 'none';
+            navigation.removeEventListener('transitionend', arguments.callee);
+        });
+        // Remove the event listener when the sidebar is closed
+        document.removeEventListener('click', closeMenuOnClickOutside);
+    }
+}
+
+function closeMenuOnClickOutside(event) {
+    var menuIcon = document.querySelector('.menu-ico');
+    var closeIcon = document.querySelector('.close-ico');
+    if (event.target !== menuIcon && event.target !== closeIcon && !navigation.contains(event.target)) {
+        toggleMenu('none');
+    }
+}
+
+  </script>
+</html>

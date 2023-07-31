@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/min.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/bf91090ba0.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <section class="navbar">
+    <div class="container">
+        <div class="navigation">
+            <div class="name">
+                <h3>Akasha Qaiser</h3>
+            </div>
+            <div class="nav" id="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                 
+                </ul>
+                <i onclick="toggleMenu('none')" id="close-ico" class="fa fa-times-circle close-ico"></i> 
+            </div>
+            <div class="menu-icons">
+            <i onclick="toggleMenu('block')" class="fa fa-bars menu-ico"></i>
+          
+        </div>
+        </div>
+        
+    </div>
+</section>
+    <section class="services">
+        <div class="container">
+            <div class="services-text"><h2>Skills & Experties </h2></div>
+            <div class="service_wrapper">
+                <div class="service-description">
+                  <p>With two years of experience as a full-stack web developer specializing in PHP, I bring a diverse skill set to cater to your web development needs. My portfolio showcases a range of services, from crafting dynamic web applications with cutting-edge PHP frameworks to creating captivating user interfaces using HTML, CSS, and JavaScript. I am dedicated to building robust and scalable solutions that align with your unique business requirements, whether it's custom CMS solutions or e-commerce platforms. Security and efficiency are paramount in my work, and I ensure continuous testing and optimization to deliver exceptional and reliable results. Let's collaborate to elevate your online presence and achieve tangible success with your digital endeavors..</p>
+                  
+                </div>
+                <div class="skills_wrapper">
+                    <div class="container">
+                        
+                        <div class="skills">
+                            <div class="details">
+                              <span>Laravel</span>
+                              <span>80%</span>
+                             </div>
+                             <div class="bar">
+                               <div id="laravel-bar"></div>
+                             </div>
+                           </div>
+                        <div class="skills">
+                            <div class="details">
+                              <span>Php</span>
+                              <span>75%</span>
+                             </div>
+                             <div class="bar">
+                               <div id="php-bar"></div>
+                             </div>
+                           </div>
+
+                           <div class="skills">
+                            <div class="details">
+                              <span>Codiegniter</span>
+                              <span>80%</span>
+                             </div>
+                             <div class="bar">
+                               <div id="codiegniter-bar"></div>
+                             </div>
+                           </div>
+
+                           <div class="skills">
+                            <div class="details">
+                              <span>Yii 2</span>
+                              <span>70%</span>
+                             </div>
+                             <div class="bar">
+                               <div id="yii-2-bar"></div>
+                             </div>
+                           </div>
+
+                           <div class="skills">
+                            <div class="details">
+                              <span>Html</span>
+                              <span>80%</span>
+                             </div>
+                             <div class="bar">
+                               <div id="html-bar"></div>
+                             </div>
+                           </div>
+
+                           <div class="skills">
+                            <div class="details">
+                              <span>CSS</span>
+                              <span>75%</span>
+                             </div>
+                             <div class="bar">
+                               <div id="css-bar"></div>
+                             </div>
+                           </div>
+                           
+                           <div class="skills">
+                            <div class="details">
+                              <span>Javascript</span>
+                              <span>68%</span>
+                            </div>
+                             <div class="bar">
+                             <div id="js-bar"></div>
+                            </div>
+                           </div>
+                           <div class="skills">
+                            <div class="details">
+                              <span>jQuery</span>
+                              <span>72%</span>
+                            </div>
+                            <div class="bar">
+                             <div id="jQuery-bar"></div>
+                             </div>
+                           </div>
+                           <div class="skills">
+                            <div class="details">
+                              <span>Wordpress</span>
+                              <span>70%</span>
+                            </div>
+                            <div class="bar">
+                             <div id="wordpress-bar"></div>
+                             </div>
+                           </div>
+                           <div class="skills">
+                            <div class="details">
+                              <span>Bootstrap</span>
+                              <span>80%</span>
+                            </div>
+                            <div class="bar">
+                             <div id="Bootstrap-bar"></div>
+                             </div>
+                           </div>
+                    </div>
+        
+                  </div>
+                
+            </div>
+        </div>
+        
+        
+    </section>
+</body>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+var navigation = document.getElementById('navigation');
+
+function toggleMenu(displayValue) {
+    if (displayValue === 'block') {
+        navigation.style.display = 'block';
+        // Force a reflow before adding the class to trigger the opening animation
+        navigation.offsetWidth;
+        navigation.classList.add('show-nav');
+        // Add an event listener to close the sidebar when clicking outside
+        document.addEventListener('click', closeMenuOnClickOutside);
+    } else {
+        navigation.classList.remove('show-nav');
+        // Add a transitionend event listener to remove the display after the closing animation ends
+        navigation.addEventListener('transitionend', function() {
+            navigation.style.display = 'none';
+            navigation.removeEventListener('transitionend', arguments.callee);
+        });
+        // Remove the event listener when the sidebar is closed
+        document.removeEventListener('click', closeMenuOnClickOutside);
+    }
+}
+
+function closeMenuOnClickOutside(event) {
+    var menuIcon = document.querySelector('.menu-ico');
+    var closeIcon = document.querySelector('.close-ico');
+    if (event.target !== menuIcon && event.target !== closeIcon && !navigation.contains(event.target)) {
+        toggleMenu('none');
+    }
+}
+
+
+
+  </script>
+  
+</html>
+
+<!--  -->
